@@ -1,6 +1,6 @@
 import './styles.scss';
-import PlaceholderInfo from "../PlaceholderInfo";
-import ChatNamePanel from "../ChatNamePanel";
+import PlaceholderInfo from "./components/PlaceholderInfo";
+import ChatNamePanel from "./components/ChatNamePanel";
 
 const WorkSpace = () => (
     <div className="workspace">
