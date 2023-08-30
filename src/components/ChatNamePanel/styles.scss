@@ -1,0 +1,14 @@
+@import 'src/_design/dark-template-color-scheme';
+
+.chatNameContainer {
+  margin: 0;
+  color: $work-space-name-of-chat-text-color;
+  padding: 0.5rem;
+  height: 2.75rem;
+  border-bottom: 1px solid $work-space-name-of-chat-text-background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .875rem;
+  line-height: 1.25rem;
+}

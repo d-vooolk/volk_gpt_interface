@@ -1,0 +1,9 @@
+@import "src/_design/dark-template-color-scheme";
+
+.workspace {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: $work-space-background-color;
+  color: rgba(86,88,105,1);
+}

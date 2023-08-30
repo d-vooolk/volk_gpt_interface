@@ -1,0 +1,9 @@
+@import "../../_design/dark-template-color-scheme";
+
+.sidebar {
+    background-color: $sidebar-background-color;
+    color: $sidebar-text-color;
+    padding: 0.5rem;
+    width: calc(100vw / 4);
+    height: 100%
+}
