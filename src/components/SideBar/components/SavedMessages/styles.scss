@@ -111,6 +111,10 @@
 }
 
 .saved-chats-wrapper {
-  height: 100%;
+  height: auto;
+  max-height: 85%;
   overflow: scroll;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 30px;
 }

@@ -1,0 +1,54 @@
+@import "../../../../_design/dark-template-color-scheme";
+
+.settings-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid $sidebar-border-color;
+  background-color: inherit;
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
+
+.settings-panel-text {
+  font-weight: 700;
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+
+.gpt-icon {
+  border-radius: 0.125rem;
+  width: 36px;
+}
+
+.more-icon {
+  cursor: pointer;
+  color: $sidebar-more-icon-color;
+}
+
+.dropdown {
+  ul, li {
+    background-color: $sidebar-dropdown-background-color !important;
+
+    span {
+      color: $base-white;
+    }
+  }
+
+  li:hover {
+    background-color: $sidebar-dropdown-hover-background-color !important;
+  }
+}
+
+.settings-item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}

@@ -11,6 +11,9 @@ $sidebar-active-saved-messages-background-color: HSL(235, 11%, 22%);
 $sidebar-icons-inactive-color: HSL(240, 12%, 79%);
 $sidebar-icons-active-color: $base-white;
 $sidebar-saved-messages-hover-color: RGB(42, 43, 50);
+$sidebar-more-icon-color: #8e8e9f;
+$sidebar-dropdown-background-color: #050509;
+$sidebar-dropdown-hover-background-color: $sidebar-active-saved-messages-background-color;
 
 $work-space-background-color: $sidebar-active-saved-messages-background-color;
 $work-space-answer-background-color: #444654;
@@ -20,7 +23,7 @@ $work-space-name-of-chat-text-color: #d9d9e3;
 $work-space-name-of-chat-text-background-color: $sidebar-saved-messages-hover-color;
 $work-space-first-gpt-text: rgba(86,88,105,1);
 $work-space-input-background-color: #40414f;
-$work-space-input-placeholder-color: #8e8e9f;
+$work-space-input-placeholder-color: $sidebar-more-icon-color;
 $work-space-input-text-color: $base-white;
 
 $error-border-color: #acacbd;

@@ -15,6 +15,7 @@ const SavedMessages = (props) => {
                     <div
                         className={`${defaultActiveChat === index ? 'saved-messages-wrapper-active' : 'saved-messages-wrapper-inactive'}`}
                         onClick={() => setDefaultActiveChat(index)}
+                        key={`${message + index * Math.random()}`}
                     >
                         <div className={`${defaultActiveChat === index ? 'chat-text-wrapper-active' : 'chat-text-wrapper-inactive'}`}>
                             <ChatIcon className="chat-icon"/>
