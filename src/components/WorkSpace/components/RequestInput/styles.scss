@@ -1,0 +1,25 @@
+@import "../../../../_design/dark-template-color-scheme";
+
+.request-input {
+  text-decoration: none;
+  border: none;
+  resize: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 16px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: $work-space-input-background-color;
+  color: $work-space-input-placeholder-color;
+  border-radius: 0.75rem;
+}
+
+.input-wrapper {
+  width: 100%;
+  padding: 0 10rem;
+  box-sizing: border-box;
+}

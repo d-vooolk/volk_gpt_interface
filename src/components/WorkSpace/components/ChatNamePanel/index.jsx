@@ -1,8 +1,8 @@
 import './styles.scss';
 
 const ChatNamePanel = () => (
-    <div className="chatNameContainer">
-        chat name
+    <div className="chat-name-container">
+        default 1
     </div>
 );
 
