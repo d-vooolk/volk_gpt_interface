@@ -5,8 +5,8 @@ $base-dark: #202123;
 
 $sidebar-background-color: $base-dark;
 $sidebar-text-color: $base-white;
-$sidebar-border-color: #4d4d4f;
-$sidebar-element-hover: #8e8ea0; /*уточнить*/
+$sidebar-border-color: hsla(0,0%,100%,.2);
+$sidebar-element-hover: HSL(225, 4%, 17%); /*уточнить*/
 
 $work-space-background-color: #343541;
 $work-space-answer-background-color: #444654;
@@ -15,15 +15,17 @@ $work-space-icons-color: #acacbd;
 $work-space-name-of-chat-text-color: #d9d9e3;
 $work-space-name-of-chat-text-background-color: #2a2b32;
 $work-space-first-gpt-text: rgba(86,88,105,1);
-$work-space-input-background-color: $base-dark;
-$work-space-input-placeholder-color: #8e8ea0;
+$work-space-input-background-color: #40414f;
+$work-space-input-placeholder-color: #8e8e9f;
 $work-space-input-text-color: $base-white;
 
 $error-border-color: #acacbd;
 $error-background-color: #554654;
 $error-text-color: $work-space-text-color;
 
+$send-button-background: #1bc37d;
 $button-background-color: #0ba37f;
 $button-text-color: $base-white;
+$button-inactive-color: #585961;
 
 $annotation-text-color: #c5c5d2;

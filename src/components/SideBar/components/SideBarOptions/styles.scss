@@ -1,0 +1,56 @@
+@import "../../../../_design/dark-template-color-scheme";
+
+.side-bar-option-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+}
+
+%element-hover {
+  background-color: $sidebar-element-hover;
+  transition: .2s;
+}
+
+.new-chat {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid $sidebar-border-color;
+  box-sizing: border-box;
+  padding: 0.25rem 0.75rem;
+  width: 100%;
+  font-size: .875rem;
+  line-height: 2.25rem;
+  margin-right: 0.5rem;
+  border-radius: .375rem;
+  gap: 0.75rem;
+  transition: .2s;
+}
+
+.new-chat:hover {
+  @extend %element-hover;
+}
+
+.change-view-sidebar {
+  border: 1px solid $sidebar-border-color;
+  padding: 0.25rem 0.75rem;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .375rem;
+  width: 10%;
+  transition: .2s;
+}
+
+.change-view-sidebar:hover {
+  @extend %element-hover;
+}
+
+.plus-icon {
+  stroke: $sidebar-text-color;
+  width: 1rem;
+}

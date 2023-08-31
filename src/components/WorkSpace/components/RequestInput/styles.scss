@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-bottom: 15px;
   padding: 16px;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -22,4 +21,29 @@
   width: 100%;
   padding: 0 10rem;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+%send-button {
+  width: 1.1rem;
+  position: relative;
+  left: -45px;
+  padding: 9px;
+  border-radius: .375rem;
+  transition: 0.3s;
+}
+
+.send-button-inactive {
+  @extend %send-button;
+  fill: $button-inactive-color;
+}
+
+.send-button-active {
+  @extend %send-button;
+  background-color: $send-button-background;
+  fill: $button-text-color;
 }

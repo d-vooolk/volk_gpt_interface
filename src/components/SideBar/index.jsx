@@ -1,8 +1,9 @@
 import './styles.scss';
+import SideBarOptions from "./components/SideBarOptions";
 
 const SideBar = () => (
     <div className="sidebar">
-        sideBar
+        <SideBarOptions />
     </div>
 );
 

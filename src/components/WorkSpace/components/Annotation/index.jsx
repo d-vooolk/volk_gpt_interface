@@ -6,7 +6,7 @@ const Annotation = () => (
         Made with
         <img src={heart} alt="heart" className="heart" />
         by
-        <a href="https://github.com/d-vooolk" target="_blank" className="link-to-git">d-vooolk</a>
+        <a href="https://github.com/d-vooolk" target="_blank" rel="noreferrer" className="link-to-git">d-vooolk</a>
     </div>
 );
 
