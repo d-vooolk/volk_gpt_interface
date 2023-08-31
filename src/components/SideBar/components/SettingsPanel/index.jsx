@@ -3,16 +3,27 @@ import {ReactComponent as GptIcon} from "../../../../static/gptIcon.svg";
 import {ReactComponent as MoreIcon} from "../../../../static/more.svg";
 import {ReactComponent as SettingsIcon} from "../../../../static/settings.svg";
 import {Dropdown} from "antd";
+import React, {useState} from "react";
+import SettingsModal from "../SettingsModal";
+
+const DropdownItem = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    return (
+        <>
+            <SettingsModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <div className="settings-item-wrapper" onClick={() => setIsModalOpen(true)}>
+                <SettingsIcon className="settings-icon"/>
+                <span> Settings </span>
+            </div>
+        </>
+    )
+}
 
 const items = [
     {
-        key: '1',
-        label: (
-            <div className="settings-item-wrapper">
-                <SettingsIcon className="settings-icon" />
-                <span> Settings </span>
-            </div>
-        ),
+        key: '1modal',
+        label: <DropdownItem/>,
     }
 ];
 

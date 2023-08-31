@@ -1,0 +1,11 @@
+@import '../../../../_design/dark-template-color-scheme';
+
+.tabs-wrapper {
+  padding: 30px 0 0;
+}
+
+.tabs-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
