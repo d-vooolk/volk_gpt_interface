@@ -62,3 +62,22 @@
   align-items: center;
   gap: 0.75rem;
 }
+
+.tabs-label-active {
+  background-color: #0ba37f !important;
+}
+
+.dropdown-text {
+  color: $base-white;
+}
+
+.modal {
+  div {
+    background-color: $base-dark !important;
+    color: $base-white !important;
+
+    button {
+      color: $base-white !important;
+    }
+  }
+}

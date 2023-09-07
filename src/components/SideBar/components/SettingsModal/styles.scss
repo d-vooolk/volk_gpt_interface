@@ -9,3 +9,31 @@
   align-items: center;
   gap: 0.75rem;
 }
+
+.settings-icon {
+  color: $base-white;
+}
+
+.tab-text {
+  color: $base-white;
+}
+
+.dropdown {
+  background-color: inherit;
+  border: none;
+  color: $base-white;
+}
+
+.dropdown-text {
+  color: $base-white;
+}
+
+.divider {
+  border: .5px solid $base-white-02;
+}
+
+.switcher {
+  div {
+    border-radius: 50%;
+  }
+}

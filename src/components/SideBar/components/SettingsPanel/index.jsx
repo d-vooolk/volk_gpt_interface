@@ -2,7 +2,7 @@ import './styles.scss';
 import {ReactComponent as GptIcon} from "../../../../static/gptIcon.svg";
 import {ReactComponent as MoreIcon} from "../../../../static/more.svg";
 import {ReactComponent as SettingsIcon} from "../../../../static/settings.svg";
-import {Dropdown} from "antd";
+import {Dropdown, Typography} from "antd";
 import React, {useState} from "react";
 import SettingsModal from "../SettingsModal";
 
@@ -14,7 +14,7 @@ const DropdownItem = () => {
             <SettingsModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
             <div className="settings-item-wrapper" onClick={() => setIsModalOpen(true)}>
                 <SettingsIcon className="settings-icon"/>
-                <span> Settings </span>
+                <Typography className="dropdown-text"> Settings </Typography>
             </div>
         </>
     )
@@ -23,7 +23,7 @@ const DropdownItem = () => {
 const items = [
     {
         key: '1modal',
-        label: <DropdownItem/>,
+        label: <DropdownItem />,
     }
 ];
 

@@ -11,7 +11,7 @@ const SideBarOptions = () => {
         <div className="side-bar-option-wrapper">
             <div className="new-chat">
                 <PlusIcon className="plus-icon"/>
-                <span>New chat</span>
+                <span className="new-chat-text">New chat</span>
             </div>
             <Tooltip title={`${isOpenSidebar ? 'Close' : 'Open'} sidebar`} placement="right">
                 <div className="change-view-sidebar">

@@ -10,7 +10,10 @@ const SettingsModal = ({ isModalOpen, setIsModalOpen }) => {
             title="Settings"
             open={isModalOpen}
             okButtonProps={{ style: { display: 'none' } }}
+            cancelButtonProps={{ style: { display: 'none' } }}
             onCancel={cancelHandler}
+            className="modal"
+            centered
         >
             <Tabs
                 defaultActiveKey="1"
