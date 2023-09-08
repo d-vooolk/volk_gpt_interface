@@ -11,7 +11,7 @@
 }
 
 %element-hover {
-  background-color: $sidebar-element-hover;
+  background-color: $dark-sidebar-element-hover;
   transition: .2s;
 }
 
@@ -19,7 +19,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid $sidebar-border-color;
+  border: 1px solid $dark-sidebar-border-color;
   box-sizing: border-box;
   padding: 0.25rem 0.75rem;
   width: 100%;
@@ -36,7 +36,7 @@
 }
 
 .change-view-sidebar {
-  border: 1px solid $sidebar-border-color;
+  border: 1px solid $dark-sidebar-border-color;
   padding: 0.25rem 0.75rem;
   font-size: .875rem;
   line-height: 1.25rem;
@@ -53,7 +53,7 @@
 }
 
 .plus-icon {
-  stroke: $sidebar-text-color;
+  stroke: $dark-sidebar-text-color;
   width: 1rem;
 }
 

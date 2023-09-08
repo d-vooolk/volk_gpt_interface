@@ -12,8 +12,8 @@
   padding: 16px;
   font-size: 1rem;
   line-height: 1.5rem;
-  background-color: $work-space-input-background-color;
-  color: $work-space-input-placeholder-color;
+  background-color: $dark-work-space-input-background-color;
+  color: $dark-work-space-input-placeholder-color;
   border-radius: 0.75rem;
 }
 
@@ -39,11 +39,11 @@
 
 .send-button-inactive {
   @extend %send-button;
-  fill: $button-inactive-color;
+  fill: $dark-button-inactive-color;
 }
 
 .send-button-active {
   @extend %send-button;
-  background-color: $send-button-background;
-  fill: $button-text-color;
+  background-color: $dark-send-button-background;
+  fill: $dark-button-text-color;
 }

@@ -4,10 +4,16 @@ import {Button, Col, Divider, Dropdown, Row, Space, Switch, Typography} from "an
 import {DownOutlined} from '@ant-design/icons';
 import React, {useRef} from "react";
 import './styles.scss';
+import {
+    CURRENT_THEME_KEY,
+    DARK_THEME,
+    LIGHT_THEME,
+    SYSTEM_THEME_KEY
+} from "../../../../constants/colorTheme";
 
 const CLEAR_HISTORY_ATTENTION = 'Save new chats on this browser to your history and allow them to be used to improve our models. Unsaved chats will be deleted from our systems within 30 days. This setting does not sync across browsers or devices.';
 
-const GeneralSettings = () => {
+const GeneralSettings = ({setTheme}) => {
     const items = [
         {
             key: `${this?.label}${Math.random()}`,
@@ -28,9 +34,22 @@ const GeneralSettings = () => {
     const themeHandler = {
         items,
         onClick: (e) => {
-            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-            console.log(prefersDarkScheme);
             themeText.current.textContent = e.domEvent.target.textContent;
+            switch (themeText.current.textContent) {
+                case 'System': {
+                    const systemTheme = sessionStorage.getItem(SYSTEM_THEME_KEY);
+                    sessionStorage.setItem(CURRENT_THEME_KEY, systemTheme);
+                    setTheme(systemTheme);
+                } break;
+                case 'Dark': {
+                    sessionStorage.setItem(CURRENT_THEME_KEY, DARK_THEME);
+                    setTheme(DARK_THEME);
+                } break;
+                case 'Light': {
+                    sessionStorage.setItem(CURRENT_THEME_KEY, LIGHT_THEME);
+                    setTheme(LIGHT_THEME);
+                } break;
+            }
         }
     }
 
@@ -38,7 +57,7 @@ const GeneralSettings = () => {
         <div>
             <Row justify="space-between" align="middle">
                 <Col>
-                    <Typography className="tab-text">Theme</Typography>
+                    <Typography className="dark-tab-text">Theme</Typography>
                 </Col>
                 <Col>
                     <Dropdown
@@ -54,7 +73,7 @@ const GeneralSettings = () => {
                                 <Typography ref={themeText} className="dropdown-text">
                                     Theme
                                 </Typography>
-                                <DownOutlined style={{ fontSize: "10px" }}/>
+                                <DownOutlined style={{fontSize: "10px"}}/>
                             </Space>
                         </Button>
                     </Dropdown>
@@ -82,7 +101,7 @@ const DataControls = () => {
 
     return (
         <>
-            <Row justify="space-between" align="middle" style={{ marginBottom: "10px" }} >
+            <Row justify="space-between" align="middle" style={{marginBottom: "10px"}}>
                 <Col>
                     Chat history & training
                 </Col>
@@ -91,33 +110,35 @@ const DataControls = () => {
                 </Col>
             </Row>
             <Row>
-                    <Typography style={{fontSize: "9px"}} className="dropdown-text">
-                        {CLEAR_HISTORY_ATTENTION}
-                    </Typography>
+                <Typography style={{fontSize: "9px"}} className="dropdown-text">
+                    {CLEAR_HISTORY_ATTENTION}
+                </Typography>
             </Row>
         </>
     )
 }
 
-export const modalTabs = [
-    {
-        label: (
-            <div className="tabs-label">
-                <SettingsIcon className="settings-icon"/>
-                <Typography className="tab-text">General</Typography>
-            </div>
-        ),
-        key: 'generalSettingsKey',
-        children: <GeneralSettings/>,
-    },
-    {
-        label: (
-            <div className="tabs-label">
-                <DataControlsIcon />
-                <Typography className="settings-icon">Data controls</Typography>
-            </div>
-        ),
-        key: 'DataControlsSettingsKey',
-        children: <DataControls/>,
-    }
-]
+export const modalTabs = (setTheme) => {
+    return ([
+        {
+            label: (
+                <div className="tabs-label">
+                    <SettingsIcon className="settings-icon"/>
+                    <Typography className="dark-tab-text">General</Typography>
+                </div>
+            ),
+            key: 'generalSettingsKey',
+            children: <GeneralSettings setTheme={setTheme}/>,
+        },
+        {
+            label: (
+                <div className="tabs-label">
+                    <DataControlsIcon/>
+                    <Typography className="settings-icon">Data controls</Typography>
+                </div>
+            ),
+            key: 'DataControlsSettingsKey',
+            children: <DataControls/>,
+        }
+    ])
+}

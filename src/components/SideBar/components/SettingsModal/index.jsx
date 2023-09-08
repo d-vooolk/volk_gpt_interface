@@ -2,7 +2,7 @@ import './styles.scss';
 import {Modal, Tabs} from "antd";
 import {modalTabs} from "./tabs";
 
-const SettingsModal = ({ isModalOpen, setIsModalOpen }) => {
+const SettingsModal = ({ isModalOpen, setIsModalOpen, setTheme }) => {
     const cancelHandler = () => setIsModalOpen(false);
 
     return (
@@ -12,14 +12,14 @@ const SettingsModal = ({ isModalOpen, setIsModalOpen }) => {
             okButtonProps={{ style: { display: 'none' } }}
             cancelButtonProps={{ style: { display: 'none' } }}
             onCancel={cancelHandler}
-            className="modal"
+            className="dark-modal"
             centered
         >
             <Tabs
                 defaultActiveKey="1"
                 tabPosition={'left'}
                 style={{ height: 220 }}
-                items={modalTabs}
+                items={modalTabs(setTheme)}
                 className="tabs-wrapper"
             />
         </Modal>

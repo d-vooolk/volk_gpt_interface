@@ -6,12 +6,16 @@ import {Dropdown, Typography} from "antd";
 import React, {useState} from "react";
 import SettingsModal from "../SettingsModal";
 
-const DropdownItem = () => {
+const DropdownItem = ({setTheme}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <>
-            <SettingsModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <SettingsModal
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+                setTheme={setTheme}
+            />
             <div className="settings-item-wrapper" onClick={() => setIsModalOpen(true)}>
                 <SettingsIcon className="settings-icon"/>
                 <Typography className="dropdown-text"> Settings </Typography>
@@ -20,20 +24,22 @@ const DropdownItem = () => {
     )
 }
 
-const items = [
-    {
-        key: '1modal',
-        label: <DropdownItem />,
-    }
-];
+const itemHandler = (setTheme) => {
+    return ({
+        items: [{
+                key: '1modal',
+                label: <DropdownItem setTheme={setTheme}/>,
+            }],
+    })
+}
 
-const SettingsPanel = () => {
+const SettingsPanel = ({setTheme}) => {
     return (
         <div className="settings-panel">
             <GptIcon className="gpt-icon"/>
             <span className="settings-panel-text">unregister user</span>
             <Dropdown
-                menu={{items}}
+                menu={itemHandler(setTheme)}
                 arrow={false}
                 placement="top"
                 trigger={['click']}
