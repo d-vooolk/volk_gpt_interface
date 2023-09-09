@@ -1,9 +1,102 @@
-@import '_design/dark-template';
+@import "./_design/template";
+
+:root {
+  --base-white: #ffffff;
+  --base-white-02: rgba(255, 255, 255, 0.2);
+  --base-dark: #202123;
+
+  --sidebar-background-color: var(--base-dark);
+  --sidebar-text-color: var(--base-white);
+  --sidebar-border-color: hsla(0, 0%, 100%, .2);
+  --sidebar-element-hover: HSL(225, 4%, 17%);
+  --sidebar-active-saved-messages-background-color: HSL(235, 11%, 22%);
+  --sidebar-icons-inactive-color: HSL(240, 12%, 79%);
+  --sidebar-icons-active-color: var(--base-white);
+  --sidebar-saved-messages-hover-color: RGB(42, 43, 50);
+  --sidebar-more-icon-color: #8e8e9f;
+  --sidebar-dropdown-background-color: #050509;
+  --sidebar-dropdown-hover-background-color: var(--sidebar-active-saved-messages-background-color);
+
+  --send-button-background: #1bc37d;
+  --button-background-color: #0ba37f;
+  --button-text-color: var(--base-white);
+  --button-inactive-color: #585961;
+
+  --modal-tabs-active-background-color: #343541;
+  --modal-button-danger-background-color: #b91d1b;
+  --modal-button-danger-hover-background-color: #981c1b;
+  --modal-button-danger-text-color: #ffffff;
+  --modal-switch-checked-background-color: #0ba37f;
+  --modal-switch-background-color: #d9d9e3;
+}
+
+html[data-theme='light'] {
+  --workspace-background-color: var(--base-white);
+  --workspace-answer-background-color: #f7f7f8;
+  --workspace-name-of-chat-text-color: #565869;
+  --workspace-name-of-chat-text-background-color: #e5e5e5;
+  --workspace-first-gpt-text: #d9d9e3;
+  --workspace-input-background-color: var(--base-white);
+  --workspace-input-text-color: #000000;
+  --workspace-input-placeholder-color: #8e8e9f;
+  --workspace-input-border-color: #e5e5e5;
+  --workspace-input-shadow: 0 0 15px rgba(0,0,0,.1);
+
+  --error-border-color: #f04444;
+  --error-background-color: #f7e5e7;
+  --error-text-color: #565869;
+
+  --annotation-text-color: #b2b2bd;
+
+  --modal-background-color: #ffffff;
+  --modal-header-text-color: #202123;
+  --modal-text-color: #565869;
+  --modal-close-button-color: #8e8e9f;
+  --modal-tabs-inactive-text-color: #000000;
+  --modal-tabs-active-text-color: #ffffff;
+  --modal-tabs-inactive-icon-color: #343541;
+  --modal-tabs-slide-bar-color: #343541;
+  --modal-tabs-down-icon-color: #40414f;
+  --modal-tabs-dropdown-hover-color: #f7f7f8;
+  --modal-attention-text: #8e8e9f;
+  --modal-divider-color: #d9d9e3;
+}
+
+html[data-theme='dark'] {
+  --workspace-background-color: var(--sidebar-active-saved-messages-background-color);
+  --workspace-answer-background-color: #444654;
+  --workspace-name-of-chat-text-color: #d9d9e3;
+  --workspace-name-of-chat-text-background-color: var(--sidebar-saved-messages-hover-color);
+  --workspace-first-gpt-text: rgba(86, 88, 105, 1);
+  --workspace-input-background-color: #40414f;
+  --workspace-input-text-color: var(--base-white);
+  --workspace-input-placeholder-color: var(--sidebar-more-icon-color);
+  --workspace-input-border-color: #303139;
+
+  --error-border-color: #acacbd;
+  --error-background-color: #554654;
+  --error-text-color: #ececf1;
+
+  --annotation-text-color: var(--sidebar-icons-inactive-color);
+
+  --modal-background-color: var(--base-dark);
+  --modal-header-text-color: #d9d9e3;
+  --modal-text-color: #c5c5d2;
+  --modal-close-button-color: #acacbd;
+  --modal-tabs-inactive-text-color: #8e8e9f;
+  --modal-tabs-active-text-color: var(--base-white);
+  --modal-tabs-inactive-icon-color: #8e8e9f;
+  --modal-tabs-slide-bar-color: var(--base-white);
+  --modal-tabs-down-icon-color: var(--base-white);
+  --modal-tabs-dropdown-hover-color: #494a54;
+  --modal-attention-text: #89899a;
+  --modal-divider-color: rgba(64,65,79,1);
+}
 
 .app-container {
   margin: 0;
   position: fixed;
-  top: var(--st, 0);
+  top: 0;
   inline-size: 100%;
   display: flex;
   flex-direction: row;

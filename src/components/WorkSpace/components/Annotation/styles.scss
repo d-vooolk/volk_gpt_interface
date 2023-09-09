@@ -1,7 +1,5 @@
-@import '../../../../_design/dark-template-color-scheme';
-
 .annotation {
-  color: $dark-annotation-text-color;
+  color: var(--annotation-text-color);
   font-size: .75rem;
   line-height: 1rem;
 }
@@ -13,5 +11,5 @@
 
 .link-to-git {
   margin-left: .4rem;
-  color: $dark-annotation-text-color;
+  color: var(--annotation-text-color);
 }

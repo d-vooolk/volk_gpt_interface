@@ -1,7 +1,5 @@
-@import "../../../../_design/dark-template-color-scheme";
-
 .placeholderHeader {
-  color: $dark-work-space-first-gpt-text;
+  color: var(--workspace-first-gpt-text);
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 2.5rem;
