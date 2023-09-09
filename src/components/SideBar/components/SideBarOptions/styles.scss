@@ -1,5 +1,3 @@
-@import "../../../../_design/dark-template-color-scheme";
-
 .side-bar-option-wrapper {
   display: flex;
   width: 100%;
@@ -11,7 +9,7 @@
 }
 
 %element-hover {
-  background-color: $dark-sidebar-element-hover;
+  background-color: var(--sidebar-element-hover);
   transition: .2s;
 }
 
@@ -19,7 +17,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid $dark-sidebar-border-color;
+  border: 1px solid var(--sidebar-border-color);
   box-sizing: border-box;
   padding: 0.25rem 0.75rem;
   width: 100%;
@@ -36,7 +34,7 @@
 }
 
 .change-view-sidebar {
-  border: 1px solid $dark-sidebar-border-color;
+  border: 1px solid var(--sidebar-border-color);
   padding: 0.25rem 0.75rem;
   font-size: .875rem;
   line-height: 1.25rem;
@@ -53,10 +51,10 @@
 }
 
 .plus-icon {
-  stroke: $dark-sidebar-text-color;
+  stroke: var(--sidebar-text-color);
   width: 1rem;
 }
 
 .new-chat-text {
-  color: $base-white;
+  color: var(--base-white);
 }

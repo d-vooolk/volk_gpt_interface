@@ -37,11 +37,11 @@ const testSaveMessages = [
     {text: "this is saved message from GPT. Please be patient and thanks for using"},
 ]
 
-const SideBar = ({setTheme}) => (
-    <div className="dark-sidebar">
+const SideBar = () => (
+    <div className="sidebar">
         <SideBarOptions />
         <SavedMessages savedMessages={testSaveMessages} />
-        <SettingsPanel setTheme={setTheme} />
+        <SettingsPanel />
     </div>
 );
 

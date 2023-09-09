@@ -1,11 +1,9 @@
-@import '../../../../_design/dark-template-color-scheme';
-
 .chat-name-container {
   margin: 0;
-  color: $dark-work-space-name-of-chat-text-color;
+  color: var(--workspace-name-of-chat-text-color);
   padding: 0.5rem;
   height: 2.75rem;
-  border-bottom: 1px solid $dark-work-space-name-of-chat-text-background-color;
+  border-bottom: 1px solid var(--workspace-name-of-chat-text-background-color);
   display: flex;
   justify-content: center;
   align-items: center;

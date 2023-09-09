@@ -1,8 +1,6 @@
-@import "../../../../_design/dark-template-color-scheme";
-
 .request-input {
   text-decoration: none;
-  border: none;
+  border: 0.5px solid var(--workspace-input-border-color);
   resize: none;
   outline: none;
   display: flex;
@@ -12,9 +10,14 @@
   padding: 16px;
   font-size: 1rem;
   line-height: 1.5rem;
-  background-color: $dark-work-space-input-background-color;
-  color: $dark-work-space-input-placeholder-color;
+  background-color: var(--workspace-input-background-color);
+  color: var(--workspace-input-text-color);
   border-radius: 0.75rem;
+  box-shadow: var(--workspace-input-shadow);
+}
+
+.request-input::placeholder {
+  color: var(--workspace-input-placeholder-color);
 }
 
 .input-wrapper {
@@ -39,11 +42,12 @@
 
 .send-button-inactive {
   @extend %send-button;
-  fill: $dark-button-inactive-color;
+  fill: var(--button-inactive-color);
 }
 
 .send-button-active {
   @extend %send-button;
-  background-color: $dark-send-button-background;
-  fill: $dark-button-text-color;
+  background-color: var(--send-button-background);
+  fill: var(--button-text-color);
+  cursor: pointer;
 }

@@ -1,45 +1,25 @@
 import './styles.scss';
 import {ReactComponent as GptIcon} from "../../../../static/gptIcon.svg";
 import {ReactComponent as MoreIcon} from "../../../../static/more.svg";
-import {ReactComponent as SettingsIcon} from "../../../../static/settings.svg";
-import {Dropdown, Typography} from "antd";
-import React, {useState} from "react";
-import SettingsModal from "../SettingsModal";
+import {Dropdown} from "antd";
+import React from "react";
+import DropdownItem from "./DropdownItem";
 
-const DropdownItem = ({setTheme}) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+const ANNOTATION = 'Volk GPT Interface';
+const items = [{
+    key: '1modal',
+    label: <DropdownItem />,
+}]
 
-    return (
-        <>
-            <SettingsModal
-                isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}
-                setTheme={setTheme}
-            />
-            <div className="settings-item-wrapper" onClick={() => setIsModalOpen(true)}>
-                <SettingsIcon className="settings-icon"/>
-                <Typography className="dropdown-text"> Settings </Typography>
-            </div>
-        </>
-    )
-}
-
-const itemHandler = (setTheme) => {
-    return ({
-        items: [{
-                key: '1modal',
-                label: <DropdownItem setTheme={setTheme}/>,
-            }],
-    })
-}
-
-const SettingsPanel = ({setTheme}) => {
+const SettingsPanel = () => {
     return (
         <div className="settings-panel">
             <GptIcon className="gpt-icon"/>
-            <span className="settings-panel-text">unregister user</span>
+            <span className="settings-panel-text">
+                {ANNOTATION}
+            </span>
             <Dropdown
-                menu={itemHandler(setTheme)}
+                menu={{items}}
                 arrow={false}
                 placement="top"
                 trigger={['click']}

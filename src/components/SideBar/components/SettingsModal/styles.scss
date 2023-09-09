@@ -1,5 +1,3 @@
-@import '../../../../_design/dark-template-color-scheme';
-
 .tabs-wrapper {
   padding: 30px 0 0;
 }
@@ -11,11 +9,11 @@
 }
 
 .settings-icon {
-  color: $base-white;
+  color: var(--base-white);
 }
 
 .dark-tab-text {
-  color: $base-white;
+  color: var(--base-white);
 }
 
 .light-tab-text {
@@ -25,15 +23,19 @@
 .dropdown {
   background-color: inherit;
   border: none;
-  color: $base-white;
+  color: var(--base-white);
 }
 
 .dropdown-text {
-  color: $base-white;
+  color: var(--base-white);
+}
+
+.attention-text {
+  color: var(--modal-attention-text);
 }
 
 .divider {
-  border: .5px solid $base-white-02;
+  border: .5px solid var(--base-white-02);
 }
 
 .switcher {

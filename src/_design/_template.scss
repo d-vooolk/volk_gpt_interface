@@ -1,5 +1,3 @@
-@import "dark-template-color-scheme";
-
 body {
   margin: 0;
   height: auto;
@@ -9,11 +7,4 @@ body * {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@mixin errorNotification {
-  border: 1px solid $dark-error-border-color;
-  background-color: $dark-error-background-color;
-  color: $dark-error-text-color;
-  padding: 8px 12px;
 }
