@@ -5,6 +5,7 @@ import {useTheme} from "./hooks/useTheme";
 import {ThemeContext} from "./context/ThemeContext";
 
 function App() {
+    // dev
     const {theme, setTheme} = useTheme();
 
     return (
