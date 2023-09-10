@@ -9,9 +9,7 @@ const RequestInput = () => {
     const [isActiveSendButton, setIsActiveSendButton] = useState(false);
 
     const handleChange = (event) => setValue(event.target.value);
-    const checkValue = (event) => event.target.value
-        ? setIsActiveSendButton(true)
-        : setIsActiveSendButton(false);
+    const checkValue = (event) => setIsActiveSendButton(!!event.target.value);
 
     return (
         <div className="input-wrapper">
