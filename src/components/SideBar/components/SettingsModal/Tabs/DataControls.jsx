@@ -1,10 +1,10 @@
 import {Col, Row, Switch, Typography} from "antd";
 import React, {useContext} from "react";
-import {IncognitoModeContext} from "../../../../../context/IncognitoModeContext";
 import {CLEAR_HISTORY_ATTENTION, INCOGNITO_MODE_TITLE} from "../../../../../constants/textConstants";
+import {CurrentSettingsContext} from "../../../../../context/UserSettingsContext";
 
 const DataControls = () => {
-    const {incognitoMode, setIncognitoMode} = useContext(IncognitoModeContext);
+    const {incognitoMode, setIncognitoMode} = useContext(CurrentSettingsContext);
 
     const switchChange = () => setIncognitoMode(!incognitoMode);
 

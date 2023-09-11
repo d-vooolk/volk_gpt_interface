@@ -4,11 +4,11 @@ import {ReactComponent as DeleteIcon} from "../../../../static/delete.svg";
 import {ReactComponent as ChatIcon} from "../../../../static/chat.svg";
 import {useContext, useState} from "react";
 import IncognitoInfoPanel from "./components/IncognitoInfoPanel";
-import {IncognitoModeContext} from "../../../../context/IncognitoModeContext";
+import {CurrentSettingsContext} from "../../../../context/UserSettingsContext";
 
 const SavedMessages = ({savedMessages}) => {
     const [defaultActiveChat, setDefaultActiveChat] = useState(0);
-    const {incognitoMode, setIncognitoMode} = useContext(IncognitoModeContext);
+    const {incognitoMode, setIncognitoMode} = useContext(CurrentSettingsContext);
 
     return (
         <div className="saved-chats-wrapper">
