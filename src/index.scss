@@ -19,6 +19,7 @@
 
   --send-button-background: #1bc37d;
   --button-background-color: #0ba37f;
+  --button-hover-background-color: #1c7f64;
   --button-text-color: var(--base-white);
   --button-inactive-color: #585961;
 
@@ -91,6 +92,10 @@ html[data-theme='dark'] {
   --modal-tabs-dropdown-hover-color: #494a54;
   --modal-attention-text: #89899a;
   --modal-divider-color: rgba(64,65,79,1);
+}
+
+html[data-incognito-mode='false'] {
+  --workspace-input-background-color: #202123;
 }
 
 .app-container {
