@@ -1,12 +1,8 @@
 import {useLayoutEffect, useState} from "react";
-
-const localStorageChecked = () => {
-    const storedValue = localStorage.getItem('incognito-mode');
-    return storedValue ? JSON.parse(storedValue) : true;
-}
+import {checkLocalStorage} from "../utils/helpers";
 
 export const useIncognitoMode = () => {
-    const [incognitoMode, setIncognitoMode] = useState(localStorageChecked());
+    const [incognitoMode, setIncognitoMode] = useState(checkLocalStorage('incognito-mode', true));
 
     useLayoutEffect(() => {
         document.documentElement.setAttribute('data-incognito-mode', String(!incognitoMode));

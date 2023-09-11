@@ -1,9 +1,23 @@
-.sidebar {
+%sidebar-properties {
     background-color: var(--sidebar-background-color);
     color: var(--sidebar-text-color);
     padding: 0.5rem;
-    width: calc(100vw / 5);
     height: 100%;
+    width: calc(100vw / 5);
     position: relative;
     box-sizing: border-box;
+}
+
+html[data-is-open-sidebar='true'] {
+    .sidebar {
+        @extend %sidebar-properties;
+        margin-left: 0;
+    }
+}
+
+html[data-is-open-sidebar='false'] {
+    .sidebar {
+        @extend %sidebar-properties;
+        margin-left: (calc((100vw / 5) - (100vw / 5) * 2));
+    }
 }
