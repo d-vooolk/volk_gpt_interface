@@ -1,3 +1,7 @@
+:root {
+  --incognito-panel-height: 12rem;
+}
+
 %centering-wrapper {
   display: flex;
   align-items: center;
@@ -38,6 +42,14 @@
   height: 100%;
 }
 
+%saved-chats-wrapper {
+  height: auto;
+  max-height: 85%;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 30px;
+}
+
 .saved-messages-wrapper-active {
   @extend %saved-messages-wrapper;
   background-color: var(--sidebar-active-saved-messages-background-color);
@@ -50,6 +62,7 @@
 
 .saved-messages-wrapper-inactive:hover {
   background-color: var(--sidebar-saved-messages-hover-color);
+
   :after {
     @extend %gradient-params;
     background: -moz-linear-gradient(left, RGBA(42, 43, 50, .5), var(--sidebar-saved-messages-hover-color) 100%);
@@ -108,11 +121,95 @@
   @extend %centering-wrapper;
 }
 
-.saved-chats-wrapper {
-  height: auto;
-  max-height: 85%;
-  overflow: scroll;
-  position: relative;
-  z-index: 0;
-  padding-bottom: 30px;
+html[data-incognito-mode='false'] {
+  .saved-chats-wrapper {
+    @extend %saved-chats-wrapper;
+    overflow: hidden;
+  }
+}
+
+html[data-incognito-mode='true'] {
+  .saved-chats-wrapper {
+    @extend %saved-chats-wrapper;
+    overflow: scroll;
+  }
+}
+
+.incognito-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: .25rem;
+}
+
+.incognito-info {
+  width: 100%;
+  height: var(--incognito-panel-height);
+  z-index: 3;
+  position: absolute;
+  background-color: var(--sidebar-background-color);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .25rem;
+  box-sizing: border-box;
+}
+
+.incognito-info-title {
+  font-size: .875rem;
+  line-height: 1.25rem;
+  padding: .25rem;
+}
+
+.incognito-info-description {
+  font-size: .75rem;
+  line-height: 1rem;
+  padding: .25rem;
+}
+
+.incognito-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  padding: 1.2rem 0.75rem;
+  background-color: var(--button-background-color);
+  border: none;
+  color: var(--base-white);
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.incognito-button:hover {
+  background-color: var(--button-hover-background-color);
+  color: var(--base-white) !important;
+  border: none;
+}
+
+.incognito-info-gradient {
+  width: 100%;
+  height: 6rem;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: var(--incognito-panel-height);
+  background: linear-gradient(to top, RGBA(32, 33, 35, .5), var(--sidebar-background-color) 100%);
+}
+
+.background {
+  position: absolute;
+  z-index: 1;
+  background: rgba(32, 33, 35, 0.7);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
 }

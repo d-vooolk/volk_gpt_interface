@@ -3,6 +3,7 @@ import {useState} from "react";
 import TextareaAutosize from 'react-textarea-autosize';
 import {ReactComponent as SendButton} from '../../../../static/sendIcon.svg';
 import {Tooltip} from "antd";
+import {SEND_MESSAGE_TITLE} from "../../../../constants/textConstants";
 
 const RequestInput = () => {
     const [value, setValue] = useState('');
@@ -25,7 +26,7 @@ const RequestInput = () => {
                 maxRows={8}
             />
 
-            <Tooltip title="Send message" placement="bottom">
+            <Tooltip title={SEND_MESSAGE_TITLE} placement="bottom">
                 <SendButton className={`${isActiveSendButton ? 'send-button-active' : 'send-button-inactive'}`}/>
             </Tooltip>
         </div>

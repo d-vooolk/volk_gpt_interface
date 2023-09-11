@@ -5,13 +5,16 @@ import React from "react";
 import '../styles.scss';
 import DataControls from "./DataControls";
 import GeneralSettings from "./GeneralSettings";
+import {DATA_CONTROLS_TAB_TITLE, GENERAL_TAB_TITLE} from "../../../../../constants/textConstants";
 
 export const modalTabs = [
     {
         label: (
             <div className="tabs-label">
                 <SettingsIcon className="settings-icon"/>
-                <Typography className="dark-tab-text">General</Typography>
+                <Typography className="dark-tab-text">
+                    { GENERAL_TAB_TITLE }
+                </Typography>
             </div>
         ),
         key: 'generalSettingsKey',
@@ -21,7 +24,9 @@ export const modalTabs = [
         label: (
             <div className="tabs-label data-controls">
                 <DataControlsIcon/>
-                <Typography className="settings-icon">Data controls</Typography>
+                <Typography className="settings-icon">
+                    { DATA_CONTROLS_TAB_TITLE }
+                </Typography>
             </div>
         ),
         key: 'DataControlsSettingsKey',

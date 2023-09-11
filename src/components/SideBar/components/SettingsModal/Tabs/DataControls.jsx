@@ -1,28 +1,26 @@
 import {Col, Row, Switch, Typography} from "antd";
-import React from "react";
+import React, {useContext} from "react";
+import {IncognitoModeContext} from "../../../../../context/IncognitoModeContext";
+import {CLEAR_HISTORY_ATTENTION, INCOGNITO_MODE_TITLE} from "../../../../../constants/textConstants";
 
 const DataControls = () => {
-    const CLEAR_HISTORY_ATTENTION = 'Save new chats on this browser to your history and allow them to be used to improve our models. Unsaved chats will be deleted from our systems within 30 days. This setting does not sync across browsers or devices.';
+    const {incognitoMode, setIncognitoMode} = useContext(IncognitoModeContext);
 
-    const switchChange = () => {
-        console.log('switched')
-    }
+    const switchChange = () => setIncognitoMode(!incognitoMode);
 
     return (
         <>
             <Row justify="space-between" align="middle" style={{marginBottom: "10px"}}>
                 <Col>
-                    Chat history & training
+                    { INCOGNITO_MODE_TITLE }
                 </Col>
                 <Col>
-                    <Switch defaultChecked onChange={switchChange} className="switcher"/>
+                    <Switch checked={!incognitoMode} onChange={switchChange} className="switcher"/>
                 </Col>
             </Row>
             <Row>
                 <Typography style={{fontSize: "9px"}} className="attention-text">
-                    {
-                        CLEAR_HISTORY_ATTENTION
-                    }
+                    { CLEAR_HISTORY_ATTENTION }
                 </Typography>
             </Row>
         </>
