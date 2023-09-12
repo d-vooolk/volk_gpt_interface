@@ -12,4 +12,7 @@ export const DROPDOWN_SETTINGS_TITLE = 'Settings';
 export const SIDEBAR_NEW_CHAT_TITLE = 'New chat';
 export const ENABLE_CHAT_HISTORY_TITLE = 'Enable chat history';
 export const SEND_MESSAGE_TITLE = 'Send message';
+export const MESSAGE_TYPE_USER = 'user';
+export const MESSAGE_TYPE_GPT = 'gpt';
+export const NEW_CHAT_TITLE = 'New chat';
 
