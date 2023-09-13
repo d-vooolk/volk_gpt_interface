@@ -20,7 +20,7 @@ const RequestInput = () => {
 
     const handleSend = () => {
             dispatch(sendMessage({
-                chatId: currentChat || null,
+                chatId: currentChat !== null ? currentChat : null,
                 message: value
             }));
             setValue('');
