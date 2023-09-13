@@ -14,7 +14,6 @@ const SavedMessages = () => {
     const dispatch = useDispatch();
 
     const savedMessages = useSelector(store => store.chatState.chats);
-    console.log(savedMessages);
 
     const toggleChatHandle = (id) => {
         setActiveChat(id)

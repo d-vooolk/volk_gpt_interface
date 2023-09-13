@@ -92,6 +92,7 @@ export const chatsSlice = createSlice({
         /* MESSAGE ACTIONS */
 
         sendMessage (state, action) {
+            console.log('action', action.payload);
             if (action.payload.chatId !== null) {
                 const currentChat = state.chats.find(chat => chat.id === action.payload.chatId);
                 currentChat.messages.push(
