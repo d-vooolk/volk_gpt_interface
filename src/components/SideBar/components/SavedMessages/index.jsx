@@ -14,9 +14,7 @@ const SavedMessages = () => {
 
     const savedMessages = useSelector(store => store.chatState.chats);
     const currentChat = useSelector(state => state.chatState.currentChat);
-    const chatsLength = useSelector(state => state.chatState.chatsLength);
-
-    console.log('chatsLength', chatsLength);
+    // const chatsLength = useSelector(state => state.chatState.chatsLength);
 
     const toggleChatHandle = (id) => {
         dispatch(setCurrentChat({ id }))
