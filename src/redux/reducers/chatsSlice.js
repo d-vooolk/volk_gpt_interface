@@ -1,13 +1,15 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {MESSAGE_TYPE_GPT, MESSAGE_TYPE_USER, NEW_CHAT_TITLE} from "../../constants/textConstants";
+import {isNumber} from "lodash";
+import {getMaxUniqID} from "../../utils/helpers";
 
 export const chatsSlice = createSlice({
     name: 'savedChats',
     initialState: {
         chats: [
             {
-                id: 0,
-                title: 'Title of new chat 1',
+                id: 2,
+                title: 'Title of new chat 3',
                 messages: [
                     {
                         id: 0,
@@ -38,8 +40,8 @@ export const chatsSlice = createSlice({
                 ],
             },
             {
-                id: 2,
-                title: 'Title of new chat 3',
+                id: 0,
+                title: 'Title of new chat 1',
                 messages: [
                     {
                         id: 0,
@@ -61,13 +63,16 @@ export const chatsSlice = createSlice({
         /* CHAT ACTIONS */
 
         addChat (state) {
-            state.chats.push(
+            const currentId = getMaxUniqID(state.chats);
+
+            state.chats.unshift(
                 {
-                    id: state.chats.length,
+                    id: currentId,
                     title: NEW_CHAT_TITLE,
                     messages: [],
                 }
-            )
+            );
+            state.currentChat = currentId;
         },
 
         editChatTitle (state, action) {
@@ -77,14 +82,11 @@ export const chatsSlice = createSlice({
 
         deleteChat (state, action) {
             state.chats = state.chats.filter(chat => chat.id !== action.payload.id);
+            state.currentChat = null;
         },
 
         setCurrentChat (state, action) {
             state.currentChat = action.payload.id;
-        },
-
-        terminateCurrentChat (state) {
-            state.currentChat = null;
         },
 
 
@@ -92,8 +94,9 @@ export const chatsSlice = createSlice({
         /* MESSAGE ACTIONS */
 
         sendMessage (state, action) {
-            console.log('action', action.payload);
-            if (action.payload.chatId !== null) {
+            const chatId = getMaxUniqID(state.chats);
+
+            if (isNumber(action.payload.chatId)) {
                 const currentChat = state.chats.find(chat => chat.id === action.payload.chatId);
                 currentChat.messages.push(
                     {
@@ -103,8 +106,7 @@ export const chatsSlice = createSlice({
                     }
                 );
             } else {
-                const chatId = state.chats.length;
-                state.chats.push({
+                state.chats.unshift({
                         id: chatId,
                         title: NEW_CHAT_TITLE,
                         messages: [
@@ -127,7 +129,6 @@ export const {
     deleteChat,
     setCurrentChat,
     sendMessage,
-    terminateCurrentChat
 } = chatsSlice.actions;
 
 export default chatsSlice.reducer;

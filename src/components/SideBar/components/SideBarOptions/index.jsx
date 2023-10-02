@@ -9,7 +9,9 @@ import {useDispatch} from "react-redux";
 const SideBarOptions = ({isOpenSidebar, setIsOpenSidebar}) => {
     const dispatch = useDispatch();
 
-    const addNewChat = () => dispatch(addChat());
+    const addNewChat = () => {
+        dispatch(addChat());
+    }
 
     return (
         <div className="side-bar-option-wrapper">
