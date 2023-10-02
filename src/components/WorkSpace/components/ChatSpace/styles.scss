@@ -1,0 +1,55 @@
+%messages-properties {
+    padding: 1.5rem 15rem;
+    color: var(--base-white);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    line-height: 1.5rem;
+}
+
+%avatar-properties {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 0.15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    overflow: scroll;
+}
+
+.user-message {
+    @extend %messages-properties;
+}
+
+.gpt-message {
+    @extend %messages-properties;
+    background-color: var(--workspace-answer-background-color);
+    border-top: 1px solid var(--message-border-color);
+}
+
+
+.avatar {
+    @extend %avatar-properties;
+    background-color: var(--user-icon-background);
+}
+
+.gpt-avatar {
+    @extend %avatar-properties;
+    background-color: var(--send-button-background);
+    svg {
+        max-width: 70%;
+    }
+}
+
+.message {
+    width: 100%;
+}

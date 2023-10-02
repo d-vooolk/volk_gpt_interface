@@ -5,10 +5,10 @@ import {ReactComponent as SendButton} from '../../../../static/sendIcon.svg';
 import {Tooltip} from "antd";
 import {SEND_MESSAGE_TITLE} from "../../../../constants/textConstants";
 import {useDispatch, useSelector} from "react-redux";
-import {sendMessage, setCurrentChat} from "../../../../redux/reducers/chatsSlice";
+import {sendMessage} from "../../../../redux/reducers/chatsSlice";
 import {isNumber} from "lodash";
 
-const RequestInput = () => {
+const RequestInput = ({setIsChatSessionEnabled}) => {
     const [value, setValue] = useState('');
     const [isActiveSendButton, setIsActiveSendButton] = useState(false);
 
@@ -21,19 +21,22 @@ const RequestInput = () => {
     const checkValue = (event) => setIsActiveSendButton(!!event.target.value);
 
     const handleSend = () => {
-        if (currentChat !== null && !chats.some(chat => chat.id === currentChat)) {
-            dispatch(sendMessage({
-                chatId: null,
-                message: value
-            }));
-        } else {
-            dispatch(sendMessage({
-                chatId: isNumber(currentChat) ? currentChat : null,
-                message: value
-            }));
-        }
+        if (value) {
+            if (currentChat !== null && !chats.some(chat => chat.id === currentChat)) {
+                dispatch(sendMessage({
+                    chatId: null,
+                    message: value
+                }));
+            } else {
+                dispatch(sendMessage({
+                    chatId: isNumber(currentChat) ? currentChat : null,
+                    message: value
+                }));
+            }
 
-        setValue('');
+            setIsChatSessionEnabled(true);
+            setValue('');
+        }
     }
 
     const keyDownHandle = (event) => {
