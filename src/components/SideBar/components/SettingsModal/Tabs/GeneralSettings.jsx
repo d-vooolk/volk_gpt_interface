@@ -1,8 +1,9 @@
 import React, {useContext, useRef} from "react";
-import {ThemeContext} from "../../../../../context/ThemeContext";
 import {CUSTOM_TYPE, DARK_THEME, LIGHT_THEME, SYSTEM_TYPE, THEME_KEY} from "../../../../../constants/colorTheme";
 import {Button, Col, Divider, Dropdown, Row, Space, Typography} from "antd";
 import {DownOutlined} from "@ant-design/icons";
+import {CLEAR_ALL_CHATS_TITLE, CLEAR_TITLE} from "../../../../../constants/textConstants";
+import {CurrentSettingsContext} from "../../../../../context/UserSettingsContext";
 
 const items = [
     {
@@ -44,7 +45,7 @@ const themeIdent = (e, setTheme) => {
 }
 
 const GeneralSettings = () => {
-    const {theme, setTheme} = useContext(ThemeContext);
+    const {theme, setTheme} = useContext(CurrentSettingsContext);
     const themeText = useRef(null);
 
 
@@ -84,11 +85,13 @@ const GeneralSettings = () => {
             <Divider className="divider"/>
             <Row justify="space-between" align="middle">
                 <Col>
-                    <Typography className="dropdown-text">Clear all chats</Typography>
+                    <Typography className="dropdown-text">
+                        { CLEAR_ALL_CHATS_TITLE }
+                    </Typography>
                 </Col>
                 <Col>
                     <Button type="primary" danger>
-                        Clear
+                        { CLEAR_TITLE }
                     </Button>
                 </Col>
             </Row>

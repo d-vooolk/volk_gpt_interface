@@ -1,20 +1,16 @@
 import SideBar from "./components/SideBar";
 import WorkSpace from "./components/WorkSpace";
 import './index.scss';
-import {useTheme} from "./hooks/useTheme";
-import {ThemeContext} from "./context/ThemeContext";
+import UserSettingsContext from "./context/UserSettingsContext";
 
 function App() {
-    // dev
-    const {theme, setTheme} = useTheme();
-
     return (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
+        <UserSettingsContext>
             <div className="app-container">
                 <SideBar/>
                 <WorkSpace/>
             </div>
-        </ThemeContext.Provider>
+        </UserSettingsContext>
     );
 }
 

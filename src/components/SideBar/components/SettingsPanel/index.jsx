@@ -4,8 +4,8 @@ import {ReactComponent as MoreIcon} from "../../../../static/more.svg";
 import {Dropdown} from "antd";
 import React from "react";
 import DropdownItem from "./DropdownItem";
+import {WORK_PLACEHOLDER_TEXT} from "../../../../constants/textConstants";
 
-const ANNOTATION = 'Volk GPT Interface';
 const items = [{
     key: '1modal',
     label: <DropdownItem />,
@@ -16,7 +16,7 @@ const SettingsPanel = () => {
         <div className="settings-panel">
             <GptIcon className="gpt-icon"/>
             <span className="settings-panel-text">
-                {ANNOTATION}
+                { WORK_PLACEHOLDER_TEXT }
             </span>
             <Dropdown
                 menu={{items}}
