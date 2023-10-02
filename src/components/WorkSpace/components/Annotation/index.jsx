@@ -7,7 +7,7 @@ const Annotation = () => (
         Made with
         <img src={heart} alt="heart" className="heart" />
         by
-        <a href={AUTHOR_GITHUB_URL} target="_blank" rel="noreferrer" className="link-to-git">d-vooolk</a>
+        <a href={AUTHOR_GITHUB_URL} target="_blank" rel="noreferrer noopener" className="link-to-git">d-vooolk</a>
     </div>
 );
 

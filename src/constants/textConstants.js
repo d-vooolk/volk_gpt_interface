@@ -15,4 +15,5 @@ export const SEND_MESSAGE_TITLE = 'Send message';
 export const MESSAGE_TYPE_USER = 'user';
 export const MESSAGE_TYPE_GPT = 'gpt';
 export const NEW_CHAT_TITLE = 'New chat';
+export const USER_LITTER = 'U';
 
